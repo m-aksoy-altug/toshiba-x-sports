@@ -11,12 +11,46 @@
 		<maven.compiler.target>21</maven.compiler.target>
 	</properties>
 	<dependencies>
-		<dependency>
+
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.18.3</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>2.18.3</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.dataformat</groupId>
+	    <artifactId>jackson-dataformat-xml</artifactId>
+	    <version>2.18.3</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.squareup.okhttp3</groupId>
+	    <artifactId>okhttp</artifactId>
+	    <version>4.12.0</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.bytedeco</groupId>
+	    <artifactId>javacv</artifactId>
+	    <version>1.5.11</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.bytedeco</groupId>
+	    <artifactId>ffmpeg-platform</artifactId>
+	    <version>7.1-1.5.11</version>
+	</dependency>
+
+		<!--<dependency>
 			<groupId>org.jupnp</groupId>
 			<artifactId>org.jupnp</artifactId>
 			<version>3.0.3</version>
 		</dependency>
-		<!--Jetty 11+ Uses jakarta.servlet, But JUPnP Expects javax.servlet-->
+		Jetty 11+ Uses jakarta.servlet, But JUPnP Expects javax.servlet
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-server</artifactId>
@@ -37,7 +71,7 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
 		</dependency>
-
+-->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j2-impl</artifactId>
