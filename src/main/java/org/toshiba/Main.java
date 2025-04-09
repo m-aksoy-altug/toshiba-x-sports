@@ -9,8 +9,8 @@ public class Main {
 	// exec:java -Dexec.mainClass="org.toshiba.Main"
 	public static void main(String[] args) throws InterruptedException, IOException {
 
-		String response = new OkHttpClient().newCall(new Request.Builder().url(CameraDefine.GET_CAMERA_INFO).build())
-				.execute().body().string();
+		String response = new OkHttpClient()
+				.newCall(new Request.Builder().url(CameraDefine.GET_CAMERA_INFO).build()).execute().body().string();
 		System.out.println("Camera status: " + response);
 
 		String responseShoot = new OkHttpClient()
