@@ -1,4 +1,4 @@
-# Turn Your Toshiba Action Camera into a 24/7 CCTV System
+# Turn Your Toshiba Action Camera into a 24/7 Recording Device
 
 Toshiba action cameras are affordable and compact, but they don't come with built-in CCTV features. This project helps you repurpose them into a continuous 24/7 recording system — automatically managing storage by keeping only the last 7 days of footage.
 
