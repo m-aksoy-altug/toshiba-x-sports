@@ -68,6 +68,8 @@ public class CameraDefine {
 //    public static final String FILE_PATH = "http://192.168.42.1/DCIM/";
 //    http://192.168.42.1/DCIM/100MEDIA/ download all photos
     
+    public static final String FILE_PATH_100MEDIA ="http://192.168.42.1/DCIM/100MEDIA/";
+    		
     public static final String GET_BATTERY = "http://192.168.42.1/setting/cgi-bin/fd_control_client?func=fd_get_camera_battery";
     public static final String GET_CAMERA_CAPACITY = "http://192.168.42.1/setting/cgi-bin/fd_control_client?func=fd_get_camera_capacity";
     public static final String GET_CAMERA_INFO = "http://192.168.42.1/setting/cgi-bin/fd_control_client?func=fd_get_camera_info";
