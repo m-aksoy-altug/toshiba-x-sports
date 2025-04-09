@@ -20,9 +20,7 @@ import org.bytedeco.javacv.FFmpegLogCallback;
 import org.bytedeco.javacv.Frame;
 
 public class ToshibaRecorder {
-	private static final String URL = "rtsp://192.168.42.1/AmbaStreamTest";
-	private static final String FOLDER= "Recordings";
-	private static final String  DATE_TIME_FORMAT= "yy-MM-dd'T'HH-mm-ss";
+
 	private static final long SEGMENNT_DURATION_MILLIS = 15 * 60 * 1000; // 15 mins
 	private FFmpegFrameGrabber grabber;
 	private FFmpegFrameRecorder recorder;
@@ -33,7 +31,7 @@ public class ToshibaRecorder {
 	 * - ImageWidth 432, ImageHeight 240 , AudioChannels 2 ,FrameRat  29.97002997002997 ,PixelFormat 3 ,SampleRate 48000
 	 */
 	public void stream() {
-		this.grabber = new FFmpegFrameGrabber(URL);
+		this.grabber = new FFmpegFrameGrabber(CameraDefine.RTSP_STREAM);
 		this.recorder = null;
 		this.executor = Executors.newSingleThreadExecutor();
 		Runtime.getRuntime().addShutdownHook(new Thread(()->{
@@ -41,7 +39,7 @@ public class ToshibaRecorder {
 			FileCleanUp.shutdown();
 		}));
 		Future<Boolean> future = rtspStreamConnection();
-		FileCleanUp.mpFourAsync(Paths.get(FOLDER),1, 1, TimeUnit.HOURS);
+		FileCleanUp.mpFourAsync(Paths.get(CameraDefine.RECORDINGS),1, 1, TimeUnit.HOURS);
 		rtspStreamRecord(future);
 	}
 
@@ -119,9 +117,9 @@ public class ToshibaRecorder {
 	}
 
 	private Path createPath() throws IOException {
-		Files.createDirectories(Paths.get(FOLDER));
-		return Paths.get(FOLDER,  LocalDateTime.now()
-				.format(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)) + ".mp4");
+		Files.createDirectories(Paths.get(CameraDefine.RECORDINGS));
+		return Paths.get(CameraDefine.RECORDINGS,  LocalDateTime.now()
+				.format(DateTimeFormatter.ofPattern(CameraDefine.DATE_TIME_FORMAT)) + ".mp4");
 	}
 	
 
